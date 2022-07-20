@@ -31,6 +31,7 @@ def string_add_stars_decorator(function_to_be_decorated):
     return decorating_function
 
 # defining a function, to be called inside wrapper
+# Note that changing the order of the decorators changes the order of the decoration
 @string_lower_case_decorator
 @string_uppercase_decorator
 # this does the decoration for us
