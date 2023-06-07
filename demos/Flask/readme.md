@@ -1,0 +1,1 @@
+To run this example, at a terminal you can run ```python MyFlask.py```

@@ -1,3 +1,0 @@
-graft EnterpriseFlask/templates
-graft EnterpriseFlask/static
-include EnterpriseFlask/schema/schema.sql
