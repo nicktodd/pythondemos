@@ -104,6 +104,79 @@ Before starting the exercise, ensure that you have the following:
    flask run
    ```
 3. The application will start running on a local server.
-4. Use an API client such as Postman or cURL to test the CRUD functionality of the application.
 
+However, does it work? Let's find out using the REST Client Extension for VSCode.
+
+
+## Creating Test .rest Files for REST Client Extension in VS Code
+
+In this exercise, you will create a set of test `.rest` files using the REST Client extension in VS Code. These files will allow you to test the functionality of the RESTful CRUD Flask application you previously created. Follow the steps below to complete the exercise.
+
+### Prerequisites
+
+Before starting the exercise, ensure that you have the following:
+
+- REST Client extension installed in VS Code.
+
+### Step 1: Create a New Folder
+
+1. Create a new folder in your project directory and name it `tests`.
+
+### Step 2: Create Test .rest Files
+
+1. In the `tests` folder, create a new file named `get_all_compact_discs.rest`.
+2. Open the `get_all_compact_discs.rest` file and add the following content:
+   ```
+   GET http://localhost:5000/compact_discs
+   ```
+3. Save the file.
+
+4. Repeat the steps above to create the following `.rest` files:
+
+   - `get_compact_disc_by_id.rest`
+   ```
+   GET http://localhost:5000/compact_discs/1
+   ```
+
+   - `create_compact_disc.rest`
+   ```
+   POST http://localhost:5000/compact_discs
+   Content-Type: application/json
+
+   {
+       "title": "New Album",
+       "artist": "New Artist",
+       "price": 9.99
+   }
+   ```
+
+   - `update_compact_disc.rest`
+   ```
+   PUT http://localhost:5000/compact_discs/10
+   Content-Type: application/json
+
+   {
+       "title": "Updated Album",
+       "artist": "Updated Artist",
+       "price": 11.99
+   }
+   ```
+
+   - `delete_compact_disc.rest`
+   ```
+   DELETE http://localhost:5000/compact_discs/10
+   ```
+
+### Step 3: Run Test Requests
+
+1. Open the `.rest` file you want to test (e.g., `get_all_compact_discs.rest`) in VS Code.
+2. Click on the "Send Request" button next to the request URL.
+3. Observe the response in the VS Code output panel.
+4. Repeat the steps for the other `.rest` files you created.
+
+---
+
+Follow these steps to create test `.rest` files and use the REST Client extension in VS Code to test the functionality of your RESTful CRUD Flask application.
+
+Note: Make sure the Flask application is running before sending the requests.
 
