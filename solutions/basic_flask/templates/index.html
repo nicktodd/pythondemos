@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+</head>
+<body>
+    <h1>Albums</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        {% for album in albums %}
+        <tr>
+            <td>{{ album[0] }}</td>
+            <td>{{ album[1] }}</td>
+            <td>{{ album[2] }}</td>
+            <td>{{ album[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

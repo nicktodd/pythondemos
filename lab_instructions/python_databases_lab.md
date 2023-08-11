@@ -1,6 +1,8 @@
 ## Accessing Compact Discs Table with Python Script Exercise
 
-In this exercise, you will write a Python script to access and manipulate the `compact_discs` table in the existing MySQL database. Follow the steps below to complete the exercise.
+In this exercise, you will write a Python script to access and manipulate the `compact_discs` table in the existing MySQL database. 
+
+Follow the steps below to complete the exercise.
 
 ### Prerequisites
 
@@ -8,6 +10,23 @@ Before starting the exercise, ensure that you have the following:
 
 - Python installed on your machine
 - The mysql-connector-python package installed
+
+### Step 0: Setting up the Database
+
+The following instructions involve the command prompt. You can also use MySQL Workbench if you prefer. The script is located here:  labs\mysql\createTables.sql.
+
+1.	MySQL should be installed and running on your machine. The script for creating the Compact Disc tables can be found in <LAB_HOME>labs\mysql \createTables.sql, so launch a command prompt in this folder.
+
+2.	Type ```mysql  –u root -p``` and press enter.
+
+3.	Enter the database password, which if you are using the course VM, will be ```c0nygre```.
+
+4.	To run the script, enter ```\. createTables.sql```. See Figure 1. Note that the path might be different depending upon where you created the command prompt.
+
+![Running the MySQL Script](./images/mysql-script.png)
+
+5.	To confirm the tables have been created, in the console, type select * from compact_discs; to see the listing, and then select * from tracks; to see the second listing.
+
 
 ### Step 1: Setting Up the Project
 
