@@ -50,7 +50,7 @@ Before starting the exercise, ensure that you have the following:
        database="your_database"
    )
    ```
-   Replace `"your_password"` with your MySQL password and `"your_database"` with the name of your database.
+   Replace `"your_password"` with your MySQL password and `"your_database"` with the name of your database. If you are using one of the standard lab environments, then the username is ```root``` and the password is ```c0nygre```. The database is called ```conygre```.
 
 ### Step 3: Implementing CRUD Functionality
 
@@ -101,7 +101,7 @@ Before starting the exercise, ensure that you have the following:
 1. In the terminal, ensure that the virtual environment is activated.
 2. Run the Flask application by executing the following command:
    ```
-   flask run
+   python -m flask run
    ```
 3. The application will start running on a local server.
 
@@ -127,7 +127,7 @@ Before starting the exercise, ensure that you have the following:
 1. In the `tests` folder, create a new file named `get_all_compact_discs.rest`.
 2. Open the `get_all_compact_discs.rest` file and add the following content:
    ```
-   GET http://localhost:5000/compact_discs
+   GET http://localhost:5000/items
    ```
 3. Save the file.
 
@@ -135,12 +135,12 @@ Before starting the exercise, ensure that you have the following:
 
    - `get_compact_disc_by_id.rest`
    ```
-   GET http://localhost:5000/compact_discs/1
+   GET http://localhost:5000/items/1
    ```
 
    - `create_compact_disc.rest`
    ```
-   POST http://localhost:5000/compact_discs
+   POST http://localhost:5000/items
    Content-Type: application/json
 
    {
@@ -152,7 +152,7 @@ Before starting the exercise, ensure that you have the following:
 
    - `update_compact_disc.rest`
    ```
-   PUT http://localhost:5000/compact_discs/10
+   PUT http://localhost:5000/items/10
    Content-Type: application/json
 
    {
@@ -164,7 +164,7 @@ Before starting the exercise, ensure that you have the following:
 
    - `delete_compact_disc.rest`
    ```
-   DELETE http://localhost:5000/compact_discs/10
+   DELETE http://localhost:5000/items/10
    ```
 
 ### Step 3: Run Test Requests
