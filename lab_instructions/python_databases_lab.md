@@ -93,7 +93,7 @@ The following instructions involve the command prompt. You can also use MySQL Wo
 ### Step 7: Testing the Update
 
 1. Run the script to test the update functionality.
-2. Retrieve the compact disc with `id` equal to 1.
+2. Retrieve the compact disc with `id` equal to 10.
 3. Verify that the title has been updated to 'New Title'.
 
 ### Step 8: Deleting a Compact Disc
