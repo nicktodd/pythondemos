@@ -33,6 +33,11 @@ The following instructions involve the command prompt. You can also use MySQL Wo
 1. Create a new folder on your machine for the exercise.
 2. Open a text editor (e.g., Notepad, Visual Studio Code).
 3. Create a new Python script file with a `.py` extension (e.g., `access_compact_discs.py`).
+4. If you haven't already, install the database library using pip install:
+
+```
+pip install mysql-connector-python
+```
 
 ### Step 2: Importing Required Modules
 

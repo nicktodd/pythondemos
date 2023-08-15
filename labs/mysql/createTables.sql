@@ -1,4 +1,4 @@
---drop database conygre;
+-- drop database conygre;
 
 CREATE DATABASE IF NOT EXISTS conygre;
 use conygre;
