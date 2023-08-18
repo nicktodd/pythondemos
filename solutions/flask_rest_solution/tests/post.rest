@@ -2,7 +2,7 @@ POST http://localhost:5000/items
    Content-Type: application/json
 
    {
-       "title": "New Album",
-       "artist": "New Artist",
+       "title": "Harry's House",
+       "artist": "Harry Styles",
        "price": 9.99
    }
