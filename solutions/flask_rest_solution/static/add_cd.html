@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Add CD</title>
+        <script>
+            function sendCd() {
+                // set up some variables containing the values of the inputs in the form
+                let title = document.getElementById("title").value;
+                let artist = document.getElementById("artist").value;
+                let price = document.getElementById("price").value;
+                let tracks = document.getElementById("tracks").value;
+                // put all the variables into a JavaScript object
+                let cd = {
+                    "title": title,
+                    "artist": artist,
+                    "price": price,
+                    "tracks": tracks
+                };
+                // convert the JavaScript object into a JSON string
+                let cdJson = JSON.stringify(cd);
+                console.log(cdJson);
+                // send the JSON string to the server
+                fetch('http://localhost:5000/items', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: cdJson
+                }).then(function(response) {
+                    console.log(response);
+                    return response.json();
+                })
+                .catch(function(error) {
+                    console.log(error);
+                })
+                .then(function(json) {
+                    console.log(json);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+                return false;
+                
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Adding a CD</h1>
+        <!-- when the form is submitted run the function above-->
+        <form onSubmit="return sendCd()" >
+                <label for="title">Title: </label>
+                <input
+                  id="title"
+                  type="text"
+                />
+                <br/>
+                <label for="artist">Artist: </label>
+                <input
+                  id="artist"
+                  type="text"
+                />
+                <br/>
+                <label for="price">Price: </label>
+                <input
+                  id="price"
+                  type="decimal"
+                />
+                <br/>
+                <label for="tracks">Number of tracks: </label>
+                <input
+                  id="tracks"
+                  type="number"
+                 />
+                <br/>
+              <input
+                type="submit"
+                value="Create Album"
+              />
+          </form>
+
+    </body>
+
+</html>
+
+
+

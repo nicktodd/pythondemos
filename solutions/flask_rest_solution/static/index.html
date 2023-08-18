@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>List of CDs</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+      // get the data from the server
+      fetch('http://localhost:5000/items', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: null
+        // process the data by converting it to JSON
+      }).then(function(response) {
+        console.log(response);
+        return response.json();
+      }).then(function(json) {
+        console.log(json);
+        // display the data in the browser
+        var cds = json;
+        var cdsHtml = '';
+        // loop round the list of CDs and create HTML for each one
+        for (var i = 0; i < cds.length; i++) {
+          cdsHtml += '<div class="cd">';
+          cdsHtml += '<p class="title">' + cds[i][1] + '</p>';
+          cdsHtml += '<p class="artist">' + cds[i][2] + '</p>';
+          cdsHtml += '<p class="price">' + cds[i][3] + '</p>'; 
+          cdsHtml += '</div>';
+        }
+        // display the HTML in the browser
+        document.getElementById('cds').innerHTML = cdsHtml;
+      });
+
+    </script>
+</head>
+<body>
+    <!-- this div is used to be populated with the data from the server -->
+    <div id="cds"></div>
+</body>
+</html>
