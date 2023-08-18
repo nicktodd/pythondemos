@@ -1,7 +1,14 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import mysql.connector
 
-app = Flask(__name__)
+# Create the application instance and set the static folder so i don't have to put the path to the static folder in the URL
+app = Flask(__name__, static_url_path='', static_folder='static')
+
+# add cors support so i can use this with a frontend
+CORS(app, crossorigin=True, resources="*")
+
+
 db = mysql.connector.connect(
     host="localhost",
     user="root",
