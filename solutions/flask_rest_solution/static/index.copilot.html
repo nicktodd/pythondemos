@@ -1,0 +1,41 @@
+<<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Generated Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="index.js"></script>
+        <script>
+            // call the function called getItems and 
+            // create an HTML table from the results
+            // and put it in the div with the id of content
+            getItems().then(function(json){
+                var items = json;
+                console.log(items);
+                var html = '<table>';
+                html += '<tr>';
+                html += '<th>Title</th>';
+                html += '<th>Artist</th>';
+                html += '<th>Price</th>';
+                html += '<th>Tracks</th>';
+                html += '</tr>';
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    html += '<tr>';
+                    html += '<td>' + item[0] + '</td>';
+                    html += '<td>' + item[1] + '</td>';
+                    html += '<td>' + item[2] + '</td>';
+                    html += '<td>' + item[3] + '</td>';
+                    html += '</tr>';
+                }
+                html += '</table>';
+                document.getElementById('content').innerHTML = html;
+            });
+            
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+    </body>
+</html>

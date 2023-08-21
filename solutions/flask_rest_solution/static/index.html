@@ -26,19 +26,21 @@
         // loop round the list of CDs and create HTML for each one
         for (var i = 0; i < cds.length; i++) {
           cdsHtml += '<div class="cd">';
-          cdsHtml += '<p class="title">' + cds[i][1] + '</p>';
-          cdsHtml += '<p class="artist">' + cds[i][2] + '</p>';
-          cdsHtml += '<p class="price">' + cds[i][3] + '</p>'; 
+          cdsHtml += '<p class="title">Title: ' + cds[i][1] + '</p>';
+          cdsHtml += '<p class="artist">Artist: ' + cds[i][2] + '</p>';
+          cdsHtml += '<p class="price">Price: ' + cds[i][4] + '</p>'; 
           cdsHtml += '</div>';
         }
         // display the HTML in the browser
-        document.getElementById('cds').innerHTML = cdsHtml;
+        document.getElementById('cds').innerHTML += cdsHtml;
       });
 
     </script>
 </head>
 <body>
     <!-- this div is used to be populated with the data from the server -->
-    <div id="cds"></div>
+    <div id="cds">
+      <h1>List of CDs</h1>
+    </div>
 </body>
 </html>

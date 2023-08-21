@@ -8,11 +8,10 @@ app = Flask(__name__, static_url_path='', static_folder='static')
 # add cors support so i can use this with a frontend
 CORS(app, crossorigin=True, resources="*")
 
-
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="c0nygre1",
+    password="c0nygre",
     database="conygre"
 )
 
