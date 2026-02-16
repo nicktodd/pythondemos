@@ -15,6 +15,9 @@
 [Chapter 13: Numpy Techniques](./labs/numpytechniques/readme.md)  
 [Chapter 14 & 15: Getting started with Pandas](./labs/pandas/readme.md)  
 [Chapter 16: Working with Time Series Data](./labs/timeseries/readme.md)  
+
+[Chapter 18: Getting started with PySpark using Glue](./labs/glue-notebooks/readme.md)  
+
 [Chapter 18: Getting started with PySpark](./labs/pysparkapi/readme.md)  
 [Chapter 19: Using the PySpark API](./labs/rddoperations1/readme.md)  
 [Chapter 20: RDD Operations](./labs/rddoperations2/readme.md)
