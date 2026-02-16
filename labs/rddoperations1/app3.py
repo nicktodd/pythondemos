@@ -1,7 +1,7 @@
 from pyspark import SparkContext
 from element import Element
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "RDD Operations Part 1 - Exercise 3")
 sc.setLogLevel("WARN")
 
 # Read all the lines of element data.
@@ -26,3 +26,5 @@ print("Elements sorted by name: %s" % sortedByName)
 
 # Repartition elements into 5 partitions, and then add code to save in a directory named "partitionedElements".
 repartitionedElements = None
+
+sc.stop()

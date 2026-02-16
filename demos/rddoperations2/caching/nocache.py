@@ -1,6 +1,6 @@
 from pyspark import SparkContext
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "No Cache Demo")
 
 logs = sc.textFile("log_files")   # This will be evaluated twice.
 
@@ -11,3 +11,5 @@ errorCount   = errorLogs.count()
 warningCount = warningLogs.count()
 
 print("errorCount: %d, warningCount: %d" % (errorCount, warningCount))
+
+sc.stop()

@@ -16,9 +16,9 @@ on.
 
 ## Source folders
 
-- \\BigData\\Student\\04-RddOperations\\part2
+- labs/rddoperations2 (student folder)
 
-- \\BigData\\Solutions\\04-RddOperations\\part2
+- solutions/rddoperations2 (solutions folder)
 
 ## Roadmap
 
@@ -67,9 +67,9 @@ function. In order to see the actual contents of the RDD, call collect()
 on the RDD for simplicity.
 
 Save app.py, then open a Command Prompt window in the *student* folder
-and submit app.py to PySpark as follows:
+and run app.py locally as follows:
 
-## spark-submit app.py 
+## python app.py
 
 ## Verify that the application prints all the words found in the text file. Exercise 2: Creating an RDD of (word, count) tuples
 
@@ -195,7 +195,7 @@ find its count. To make the application interesting, you\'ll pass in the
 \"lookup words\" as command-line arguments. For example, you might run
 your application as follows:
 
-spark-submit app.py DUNCAN ACT Witch
+python app.py DUNCAN ACT Witch
 
 In this case, argv contains 4 elements:
 

@@ -1,7 +1,7 @@
 from pyspark import SparkContext
 from sys import argv
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "RDD Operations Part 2")
 sc.setLogLevel("WARN")
 
 # Read all lines from MacbethSnippet.txt.
@@ -27,3 +27,5 @@ lines = sc.textFile("MacbethSnippet.txt")
 
 
 # Ex 7: Get just the counts, cache it, and then do some numeric actions.
+
+sc.stop()

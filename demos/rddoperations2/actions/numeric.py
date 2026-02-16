@@ -1,6 +1,6 @@
 from pyspark import SparkContext
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "Numeric Action Demo")
 
 numbers = sc.parallelize([1, 2, 3, 5])
 
@@ -10,4 +10,6 @@ stdev    = numbers.stdev()
 variance = numbers.variance()
 
 print("sum %f, mean %f, stdev %f, variance %f" % (sum, mean, stdev, variance))
+
+sc.stop()
 

@@ -1,7 +1,12 @@
+import shutil
+import os
 from pyspark import SparkContext
 from element import Element
 
-sc = SparkContext()
+if os.path.exists("partitionedElements"):
+    shutil.rmtree("partitionedElements")
+
+sc = SparkContext("local[*]", "RDD Operations Part 1 - Exercise 3")
 sc.setLogLevel("WARN")
 
 # Read all the lines of element data.
@@ -25,3 +30,5 @@ print("Elements sorted by name: %s" % sortedByName)
 # Repartition elements into 5 partitions, and save in a directory named "partitionedElements".
 repartitionedElements = elements.repartition(5)
 repartitionedElements.saveAsTextFile("partitionedElements")
+
+sc.stop()

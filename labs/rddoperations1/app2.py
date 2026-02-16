@@ -1,5 +1,5 @@
 from pyspark import SparkContext
-sc = SparkContext()
+sc = SparkContext("local[*]", "RDD Operations Part 1 - Exercise 2")
 sc.setLogLevel("WARN")
 
 teams = sc.textFile("teams.txt")
@@ -18,4 +18,6 @@ print("Cartesian product of all teams: %s" % cartesian)
 # Fixtures.
 fixtures = None
 print("Fixtures: %s" % fixtures)
+
+sc.stop()
 

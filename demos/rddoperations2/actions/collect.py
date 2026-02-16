@@ -1,10 +1,12 @@
 from pyspark import SparkContext
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "Collect Action Demo")
 
 numbers = sc.parallelize( [1, 2, 3, 1, 1, 2, 3, 1, 2, 1, 2, 2, 3, 4] )
 
 collectResult = numbers.collect()
 
 print("collectResult: %s" % collectResult)
+
+sc.stop()
 

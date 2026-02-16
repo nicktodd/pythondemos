@@ -1,7 +1,7 @@
 from pyspark import SparkContext
 from pyspark import StorageLevel
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "Persist Demo")
 
 logs = sc.textFile("log_files")   
 logs.persist(StorageLevel.DISK_ONLY)
@@ -13,3 +13,5 @@ errorCount   = errorLogs.count()
 warningCount = warningLogs.count()
 
 print("errorCount: %d, warningCount: %d" % (errorCount, warningCount))
+
+sc.stop()

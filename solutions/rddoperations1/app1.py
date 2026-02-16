@@ -1,5 +1,5 @@
 from pyspark import SparkContext
-sc = SparkContext()
+sc = SparkContext("local[*]", "RDD Operations Part 1 - Exercise 1")
 sc.setLogLevel("WARN")
 
 klmAirports = sc.textFile("klm.txt")
@@ -28,4 +28,6 @@ print("\nAirports in common: %s" % commonAirports)
 # Get airports served by KLM but not Norwegian.
 klmOnlyAirports = klmAirports.subtract(norAirports).collect()
 print("\nAirports served by KLM but not Norwegian: %s" % klmOnlyAirports)
+
+sc.stop()
 

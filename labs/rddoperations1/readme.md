@@ -9,9 +9,9 @@ data from several simple text files.
 
 ## Source folders
 
-- \\BigData\\Student\\04-RddOperations\\part1
+- labs/rddoperations1 (student folder)
 
-- \\BigData\\Solutions\\04-RddOperations\\part1
+- solutions/rddoperations1 (solutions folder)
 
 ## Roadmap
 
@@ -38,7 +38,7 @@ two text files:
   Airlines flies into.
 
 Follow the comments in app1.py to complete this exercise. After each
-step, save the Python file and submit it to PySpark.
+step, save the Python file and run it locally with python app1.py.
 
 ## Exercise 2: Performing set-based operations
 
@@ -51,7 +51,7 @@ editor now. The application makes use of data from two text files:
 - stadiums.txt -- contains the stadiums of Premier League teams, 2017-18
 
 Follow the comments in app2.py to complete this exercise. After each
-step, save the Python file and submit it to PySpark to test your new
+step, save the Python file and run it locally with python app2.py to test your new
 code. Here are some additional hints:
 
 - To zip teams with stadiums, use the zip() method. You should obtain a
@@ -96,4 +96,4 @@ each other:
 We\'ve defined a Python class named Element in element.py, to represent
 an element in the periodic table. All the code you have to write will be
 in app3.py, so open this file in the text editor now. Complete the
-application as per the comments in app3.py.
+application as per the comments in app3.py. Run it locally with python app3.py.

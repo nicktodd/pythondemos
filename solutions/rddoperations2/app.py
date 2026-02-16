@@ -1,7 +1,7 @@
 from pyspark import SparkContext
 from sys import argv
 
-sc = SparkContext()
+sc = SparkContext("local[*]", "RDD Operations Part 2")
 sc.setLogLevel("WARN")
 
 # Read all lines from MacbethSnippet.txt.
@@ -52,5 +52,7 @@ mean = counts.mean()
 stdev = counts.stdev()
 variance = counts.variance()
 print("Sum: %d, mean: %f, standard deviation: %f, variance: %f" % (sum, mean, stdev, variance))
+
+sc.stop()
 
  
