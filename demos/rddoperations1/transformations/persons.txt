@@ -1,0 +1,6 @@
+Jill Smith,23,female,22222
+John Adams,21,male,11111
+Bill Davis,25,male,22222
+Emma Owens,39,female,22222
+Will Elson,21,male,33333
+Sara Evans,19,female,11111

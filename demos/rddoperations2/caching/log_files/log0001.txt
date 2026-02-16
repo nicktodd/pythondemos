@@ -1,0 +1,12 @@
+INFO: This is informational message #1. 
+ERROR: This is error message #1.  
+WARNING: This is warning message #1. 
+INFO: This is informational message #2. 
+ERROR: This is error message #2.  
+WARNING: This is warning message #2. 
+INFO: This is informational message #3. 
+ERROR: This is error message #3.  
+WARNING: This is warning message #3. 
+INFO: This is informational message #4. 
+ERROR: This is error message #4.  
+WARNING: This is warning message #4. 

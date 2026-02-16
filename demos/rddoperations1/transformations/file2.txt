@@ -1,0 +1,8 @@
+ant
+bat
+cat
+dog
+elk
+fish
+giraffe
+horse
