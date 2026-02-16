@@ -14,9 +14,12 @@
 [Chapter 12: Getting Started with Data Science and Numpy](./labs/numpygettingstarted/readme.md)  
 [Chapter 13: Numpy Techniques](./labs/numpytechniques/readme.md)  
 [Chapter 14 & 15: Getting started with Pandas](./labs/pandas/readme.md)  
-[Chapter 16: Working with Time Series Data](./labs/timeseries/readme.md)
+[Chapter 16: Working with Time Series Data](./labs/timeseries/readme.md)  
+[Chapter 18: Getting started with PySpark](./labs/pysparkapi/readme.md)  
+[Chapter 19: Using the PySpark API](./labs/rddoperations1/readme.md)  
+[Chapter 20: RDD Operations](./labs/rddoperations2/readme.md)
 
-## Working with Databases and REST API 
+## Working with Databases and REST API
 
 [Lab 1 Python and Databases](./labs/databases/readme.md)
 This exercise introduces you to how you can work with  a relational database from Python. The database is a MySQL database, but the lab could be adapted for other relational databases.
