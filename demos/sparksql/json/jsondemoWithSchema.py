@@ -5,7 +5,7 @@ from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 # Define the schema for employee data.
 employeeSchema = StructType([
 	StructField("id", IntegerType(), False),
-	StructField("name", StringType(), False),
+	StructField("name", IntegerType(), False),
 	StructField("age", IntegerType(), False),
 	StructField("salary", IntegerType(), False)
 ])
@@ -15,7 +15,7 @@ sc = SparkContext("local[*]", "JSON Demo With Schema")
 sqlContext = SQLContext(sc)
 
 # Create a DataFrame containing data read in from a json file.
-employeeDF = sqlContext.read.schema(employeeSchema).json("employees.json")
+employeeDF = sqlContext.read.schema(employeeSchema).json("employees.json", multiLine=True, mode="DROPMALFORMED")
 
 # Create or replace a temporary view.
 employeeDF.createOrReplaceTempView("employee")
