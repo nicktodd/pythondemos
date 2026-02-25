@@ -21,12 +21,16 @@
 
 [Chapter 14-16: Getting started with PySpark using Glue](./labs/glue-notebooks/readme.md)  
 
+
+
+
 ## Appendices
 
 [Appendix A: Asynchronous Python](./labs/async_python/readme.md)
 [Appendix B: Functional Programming](./labs/functional/readme.md)  
 [Appendix C: Python Data Typing](./labs/data_typing/readme.md)  
-
+[Appendix E: Spark DataFrames with SQL](./labs/sparksql) - Note no readme.  
+[Appendix F: Spark DataFrames with the API](./labs/sparkdataframes/readme.md)  
 
 ## Working with Databases and REST API
 
