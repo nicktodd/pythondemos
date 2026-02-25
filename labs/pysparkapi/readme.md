@@ -14,35 +14,16 @@ operations in the next chapter as well.
 
 ## Roadmap
 
-There are 3 exercises in this lab, of which the last exercise is \"if
+There are 2 exercises in this lab, of which the last exercise is \"if
 time permits\". Here is a brief summary of the tasks you will perform in
 each exercise; more detailed instructions follow later:
 
-1.  Running a Python script locally with PySpark
+1. Performing RDD operations
 
-2.  Performing RDD operations
+2. (If Time Permits) Saving RDDs
 
-3.  (If Time Permits) Saving RDDs
 
-##  Exercise 1: Running a Python script locally with PySpark
-
-In the *student* folder, open app.py in a text editor. Add the following
-statement to print a message:
-
-print(\"Hello World\\n\")
-
-Save the file (but keep it open in the text editor, you\'ll continue
-working with this file later).
-
-Open a Command Prompt window in the *student* folder and run the
-Python script locally as follows:
-
-python app.py
-
-This starts PySpark in local mode and executes the Python script. You should see
-*Hello World* displayed.
-
-## Exercise 2: Performing RDD operations
+## Exercise 1: Performing RDD operations
 
 Modify app.py in the text editor as follows:
 
@@ -79,7 +60,7 @@ following results:
 
 - Witch lines: *(A collection of RDD objects)*
 
-## Exercise 3 (If time permits): Saving RDDs 
+## Exercise 2 (If time permits): Saving RDDs 
 
 Modify app.py so that it saves the witchLines RDD to a directory named
 \"witches\". Add cleanup code at the beginning to remove any existing "witches" directory.

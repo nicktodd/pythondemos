@@ -2,6 +2,7 @@ from pyspark import SparkContext
 
 sc = SparkContext()
 
+# Large key-value RDD containing entries with keys "a" and "b"
 pairRdd = sc.parallelize([
     ["a",100], 
     ["b",200], 
@@ -46,6 +47,10 @@ pairRdd = sc.parallelize([
 
 ])
 
+# sampleByKey() samples elements per key using different fractions for each key
+# First argument (True): sample with replacement
+# Second argument: a dict mapping each key to its approximate sampling fraction
+# Here ~20% of "a" entries and ~40% of "b" entries are kept
 sampleRdd = pairRdd.sampleByKey(True, {"a": 0.2, "b": 0.4})
 result = sampleRdd.collect()
 

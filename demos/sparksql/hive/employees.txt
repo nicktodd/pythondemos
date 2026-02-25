@@ -1,0 +1,4 @@
+1201,John Smith,21,10000
+1202,Mary Jones,22,20000
+1203,Judy Evans,23,30000
+1204,Bill Wilks,24,40000

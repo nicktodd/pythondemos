@@ -121,4 +121,3 @@ After completing all exercises:
 3. Download your completed notebook: **File > Download**
 4. Optionally, check your S3 bucket for output files
 
-Good luck with your PySpark exercises!
