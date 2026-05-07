@@ -212,6 +212,48 @@ result = safe_operation()  # Should handle errors properly
 result = another_safe_operation()  # Should log errors
 ```
 
+## Exercise 9: Exception Handling with Files
+
+**File**: `labs/exception_handling/files_and_exceptions.py`
+
+Practice exception handling when reading and writing text files and CSV files.
+
+### Part 1 – Text files
+
+1. `read_text_file(filepath)` – read a file and handle `FileNotFoundError`, `PermissionError`, and `OSError`
+2. `write_text_file(filepath, content)` – write content to a file and return `True`/`False`
+3. `append_to_text_file(filepath, line)` – append a line and handle errors gracefully
+4. `count_lines(filepath)` – count lines in a file, returning `-1` on error
+
+### Part 2 – CSV files
+
+5. `read_csv_file(filepath)` – read a CSV with a header row into a list of dicts using `csv.DictReader`
+6. `write_csv_file(filepath, fieldnames, rows)` – write a list of dicts to a CSV using `csv.DictWriter`; raise `ValueError` for empty `fieldnames`
+7. `get_csv_column(filepath, column_name)` – return all values in a named column; handle a missing column with `KeyError`
+
+### Part 3 – Putting it together
+
+8. `process_csv_safely(filepath, output_filepath)` – read a CSV with `id` and `value` columns, skip rows where `value` is not a valid float, and write a new CSV that adds a `squared` column
+
+**Test your implementation**:
+```python
+# Part 1
+write_text_file("notes.txt", "Hello\nWorld")
+print(read_text_file("notes.txt"))          # "Hello\nWorld"
+print(count_lines("notes.txt"))             # 2
+print(read_text_file("missing.txt"))        # "File not found: missing.txt"
+
+# Part 2
+rows = [{"id": "1", "value": "10"}, {"id": "2", "value": "20"}]
+write_csv_file("data.csv", ["id", "value"], rows)
+print(read_csv_file("data.csv"))            # [{'id': '1', 'value': '10'}, ...]
+print(get_csv_column("data.csv", "value"))  # ['10', '20']
+
+# Part 3
+process_csv_safely("data.csv", "output.csv")
+print(read_csv_file("output.csv"))          # rows with 'squared' column added
+```
+
 ## Submission
 
 1. Complete all exercises in the `labs/exception_handling/` files
