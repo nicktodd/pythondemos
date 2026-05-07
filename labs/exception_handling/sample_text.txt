@@ -1,0 +1,10 @@
+Python Exception Handling Lab
+==============================
+This is a sample text file for the file-based exception handling exercises.
+
+Line 5: You can read this file using read_text_file().
+Line 6: Try counting the lines with count_lines().
+Line 7: Append new lines using append_to_text_file().
+Line 8: Always handle exceptions when working with files!
+Line 9: Use FileNotFoundError, PermissionError, and OSError.
+Line 10: Good exception handling makes your programs more robust.

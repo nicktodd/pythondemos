@@ -7,6 +7,11 @@ your own implementation.
 
 Run this file directly to test your solutions:
     python files_and_exceptions.py
+
+Sample files provided in this folder:
+    sample_text.txt  – plain text file with 10 lines
+    sample_data.csv  – CSV with columns: id, name, value
+                       (contains intentionally bad rows for Part 3)
 """
 
 import csv
@@ -148,20 +153,25 @@ def process_csv_safely(filepath: str, output_filepath: str) -> bool:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    SAMPLE_TXT = "sample_text.txt"
+    SAMPLE_CSV = "sample_data.csv"
     TEST_TXT = "test_output.txt"
     TEST_CSV = "test_output.csv"
     TEST_PROCESSED = "test_processed.csv"
 
     print("=== Part 1: Text files ===")
 
-    # write then read back
-    write_text_file(TEST_TXT, "Hello, World!\nSecond line\nThird line")
-    content = read_text_file(TEST_TXT)
-    print("File contents:", repr(content))
+    # read the provided sample file
+    content = read_text_file(SAMPLE_TXT)
+    print("sample_text.txt contents:\n", content)
 
-    # append a line
+    # count lines in the sample file
+    print("Line count (sample_text.txt):", count_lines(SAMPLE_TXT))
+
+    # append a new line to a copy so the original stays intact
+    write_text_file(TEST_TXT, content)
     append_to_text_file(TEST_TXT, "Appended line")
-    print("Line count:", count_lines(TEST_TXT))  # should be 4
+    print("Line count after append:", count_lines(TEST_TXT))
 
     # missing file
     result = read_text_file("nonexistent_file.txt")
@@ -169,6 +179,17 @@ if __name__ == "__main__":
 
     print("\n=== Part 2: CSV files ===")
 
+    # read the provided sample CSV
+    rows = read_csv_file(SAMPLE_CSV)
+    print("Rows from sample_data.csv:", rows)
+
+    names = get_csv_column(SAMPLE_CSV, "name")
+    print("Name column:", names)
+
+    missing_col = get_csv_column(SAMPLE_CSV, "nonexistent")
+    print("Missing column result:", missing_col)
+
+    # write a small CSV from scratch
     fieldnames = ["id", "value"]
     sample_rows = [
         {"id": "1", "value": "10.5"},
@@ -178,21 +199,13 @@ if __name__ == "__main__":
     ]
     write_csv_file(TEST_CSV, fieldnames, sample_rows)
 
-    rows = read_csv_file(TEST_CSV)
-    print("Rows read:", rows)
-
-    values = get_csv_column(TEST_CSV, "value")
-    print("Values column:", values)
-
-    missing_col = get_csv_column(TEST_CSV, "nonexistent")
-    print("Missing column result:", missing_col)
-
     print("\n=== Part 3: Processing ===")
-    process_csv_safely(TEST_CSV, TEST_PROCESSED)
+    # process the provided sample_data.csv (has intentionally bad rows)
+    process_csv_safely(SAMPLE_CSV, TEST_PROCESSED)
     processed = read_csv_file(TEST_PROCESSED)
     print("Processed rows:", processed)
 
-    # cleanup
+    # cleanup test files only (leave sample files intact)
     for f in [TEST_TXT, TEST_CSV, TEST_PROCESSED]:
         if os.path.exists(f):
             os.remove(f)

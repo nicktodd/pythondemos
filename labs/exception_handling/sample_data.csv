@@ -1,0 +1,9 @@
+id,name,value
+1,Alice,42.5
+2,Bob,not_a_number
+3,Charlie,78.0
+4,Diana,
+5,Eve,15.25
+6,Frank,100.0
+7,Grace,bad_data
+8,Hank,55.5

@@ -218,6 +218,10 @@ result = another_safe_operation()  # Should log errors
 
 Practice exception handling when reading and writing text files and CSV files.
 
+Two sample files are provided in `labs/exception_handling/` to use during the exercises:
+- `sample_text.txt` – a plain text file with 10 lines
+- `sample_data.csv` – a CSV file with columns `id`, `name`, and `value`; some rows contain intentionally bad data so you can practice skipping invalid entries
+
 ### Part 1 – Text files
 
 1. `read_text_file(filepath)` – read a file and handle `FileNotFoundError`, `PermissionError`, and `OSError`
@@ -237,21 +241,20 @@ Practice exception handling when reading and writing text files and CSV files.
 
 **Test your implementation**:
 ```python
-# Part 1
-write_text_file("notes.txt", "Hello\nWorld")
-print(read_text_file("notes.txt"))          # "Hello\nWorld"
-print(count_lines("notes.txt"))             # 2
-print(read_text_file("missing.txt"))        # "File not found: missing.txt"
+# Part 1 – use the provided sample_text.txt
+print(read_text_file("sample_text.txt"))     # prints file contents
+print(count_lines("sample_text.txt"))        # 10
+append_to_text_file("sample_text.txt", "Line 11: appended!")
+print(read_text_file("missing.txt"))         # "File not found: missing.txt"
 
-# Part 2
-rows = [{"id": "1", "value": "10"}, {"id": "2", "value": "20"}]
-write_csv_file("data.csv", ["id", "value"], rows)
-print(read_csv_file("data.csv"))            # [{'id': '1', 'value': '10'}, ...]
-print(get_csv_column("data.csv", "value"))  # ['10', '20']
+# Part 2 – use the provided sample_data.csv
+print(read_csv_file("sample_data.csv"))      # list of dicts, one per row
+print(get_csv_column("sample_data.csv", "name"))   # ['Alice', 'Bob', ...]
+print(get_csv_column("sample_data.csv", "score"))  # [] with a 'column not found' message
 
-# Part 3
-process_csv_safely("data.csv", "output.csv")
-print(read_csv_file("output.csv"))          # rows with 'squared' column added
+# Part 3 – process sample_data.csv; rows with bad 'value' entries should be skipped
+process_csv_safely("sample_data.csv", "processed_output.csv")
+print(read_csv_file("processed_output.csv"))  # rows with 'squared' column added
 ```
 
 ## Submission
